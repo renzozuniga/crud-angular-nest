@@ -1,0 +1,15 @@
+.banner {
+    padding: 25px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.text-title {
+    font-size: 60px;
+    margin: 30px 0px 0px 0px;
+}
+
+.text-subtitle {
+    font-size: 20px;
+    margin: 0px 0px 30px 0px;
+}

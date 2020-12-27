@@ -1,0 +1,5 @@
+<div class="row row-details" *ngFor="let post of posts" (click)="goToExternalURL(post.url)">
+    <p class="title normal-text">{{ post.title }} <span class="gray-text">- {{post.author}} -</span></p>
+    <p class="date normal-text">{{ post.createdAt | formatDate }}</p>
+    <button class="delete normal-button" (click)="deletePost(post._id)"><i class="gg-trash"></i></button>
+</div>

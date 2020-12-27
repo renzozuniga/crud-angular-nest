@@ -1,0 +1,25 @@
+version: '3' # specify docker-compose version
+
+# Define the services/containers to be run
+services: 
+  angular: # name of the first service
+    container_name: front
+    hostname: localhost
+    build: ./nestjs-posts-client # specify the directory of the Dockerfile
+    ports:
+      - "8080:80" # specify port forewarding
+
+  nest: #name of the second service
+    container_name: back
+    build: ./nestjs-posts-api # specify the directory of the Dockerfile
+    restart: always
+    ports:
+      - "3000:3000" #specify ports forewarding
+    links:
+      - mongo
+
+  mongo:
+    container_name: db_code
+    image: mongo
+    ports:
+        - 27017:27017

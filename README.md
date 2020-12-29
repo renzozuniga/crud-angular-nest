@@ -21,3 +21,9 @@ git clone https://github.com/renzozuniga/crud-angular-nest
 cd crud-angular-nest
 docker-compose up --build
 ```
+
+### Database Population  
+``` 
+First, you have to populate the database with the execution of the following GET Request:
+http://localhost:3000/post/init
+```

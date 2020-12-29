@@ -7,7 +7,8 @@ module.exports = function(config) {
         frameworks: ['jasmine', '@angular-devkit/build-angular'],
         plugins: [
             require('karma-jasmine'),
-            require('karma-chrome-launcher'),
+            // require('karma-chrome-launcher'),
+            require('karma-phantomjs-launcher'), /* add PhantomJS launcher here */
             require('karma-jasmine-html-reporter'),
             require('karma-coverage-istanbul-reporter'),
             require('@angular-devkit/build-angular/plugins/karma')
@@ -25,22 +26,7 @@ module.exports = function(config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ['Chrome'],
-        browserDisconnectTimeout: 10000,
-        browserDisconnectTolerance: 3,
-        browserNoActivityTimeout: 60000,
-        customLaunchers: {
-            Headless: {
-                base: 'ChromeHeadless',
-                flags: [
-                    '--no-sandbox',
-                    '--no-proxy-server',
-                    '--disable-web-security',
-                    '--disable-gpu',
-                    '--js-flags=--max-old-space-size=8196'
-                ]
-            }
-        },
+        browsers: ['PhantomJS'],
         singleRun: false,
         restartOnFileChange: true
     });
